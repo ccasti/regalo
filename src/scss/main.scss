@@ -1,0 +1,53 @@
+@charset "utf-8";
+@import "../../node_modules/bulma/bulma.sass";
+
+/****************************************/
+
+/*Animation show*/
+.show-enter, .show-leave-to {
+  opacity: 0;
+}
+
+.show-enter-active, .show-leave-active {
+  transition: all .72s linear;
+  transition-delay: .72s;
+}
+
+/****************************************/
+
+/*Animation Notification*/
+.notification-enter-active, .notification-leave-active {
+  transform: translateY(0);
+  transition: all .72s;
+}
+
+.notification-enter {
+  transform: translateY(-250%);
+}
+
+.notification-leave-to {
+  transform: translateY(350%);
+}
+
+/****************************************/
+
+/*Animation Expand*/
+.expand-enter-active {
+  animation: expand-in .6s;
+}
+
+.expand-leave-active {
+  animation: expand-in .6s reverse;
+}
+
+@keyframes expand-in {
+  0% {
+    transform: scale(1, 0);
+    transform-origin: top;
+  }
+  100% {
+    transform: scale(1, 1);
+    transform-origin: top;
+  }
+}
+/****************************************/
