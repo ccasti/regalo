@@ -2,6 +2,7 @@
   <div @click="clickCard" class="card">
     <div class="card-image">
       <figure class="image is-4by4">
+         <!-- <img src="../assets/people.jpg"/> -->
         <img :src="elem.image"/>
       </figure>
     </div>
@@ -10,39 +11,20 @@
         <div class="media-content">
           <p class="is-size-4-desktop is-size-5-tablet is-size-6-mobile">{{ elem.name }}</p>
         </div>
-        <div class="media-right" aria-label="more options">
-          <span v-show="!showIcon" class="icon">
-            <font-awesome-icon icon="chevron-down" />
-          </span>
-          <span  v-show="showIcon" class="icon">
-            <font-awesome-icon icon="chevron-up" />
-          </span>
-        </div>
       </div>
       <transition name="expand">
         <div v-show="showContent" class="content">
           <strong>{{ elem.title }}</strong><br/>
           <br/>{{ elem.subtitle }}<br/>
-          <br/><strong>¿Qué obtendrás con esta cápsula?</strong><br/>
-          <br/>{{ elem.file1 }}<br/>
-          <br/>{{ elem.file2 }}<br/>
-          <br/>{{ elem.file3 }}<br/>
-          <br/>{{ elem.file4 }}<br/>
-          <br/>{{ elem.file5 }}<br/>
           <br/>Por apenas <strong>{{ elem.price }}</strong>
           <br/>
           <div class="button-offer">
             <button
               :id="elem.id"
               :url="elem.url"
-              class="button is-rounded is-size-4-desktop is-size-5-tablet is-size-6-mobile palpitar">
-              COMPRAR AHORA</button>    
+              class="button is-rounded is-size-5-desktop is-size-6-tablet is-size-6-mobile palpitar">
+              Ver más...</button>    
           </div>
-          <strong>¿Para quién es esta cápsula?</strong><br/>
-          <br/>{{ elem.who1 }}<br/>
-          <br/>{{ elem.who2 }}<br/>
-          <br/>{{ elem.who3 }}<br/>
-          <br/>{{ elem.who4 }}<br/>
         </div>
       </transition>
     </div>
@@ -59,7 +41,7 @@ export default {
 
   data () {
     return {
-      showContent: false,
+      showContent: true,
       showIcon: false
     }
   },
@@ -86,13 +68,7 @@ export default {
 
      
       } else {
-        if (this.showContent) {
-        this.showContent = false
-        this.showIcon = false
-      } else {
-        this.showContent = true
-        this.showIcon = true
-      }
+        return
       }
     }
     
@@ -107,13 +83,7 @@ export default {
 
   .card {
     width: 100%;
-    border-radius: 6%;
     box-shadow: 0px 3px 3px 0px #38b6ff;
-    cursor: pointer;
-  }
-
-  .card-image, .image img {
-    border-radius: 6%;
   }
 
   .media-content p, .image {

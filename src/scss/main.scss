@@ -51,3 +51,20 @@
   }
 }
 /****************************************/
+
+
+/* Animaciones share */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.6s ease;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide-up-enter-active {
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+.slide-up-enter {
+  transform: translateY(100%);
+  opacity: 0;
+}
