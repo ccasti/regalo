@@ -26,7 +26,7 @@
               </p>
             </div>
           </div>
-          <div class="columns product">
+          <div class="columns product1">
             <div class="column is-12-mobile is-8-tablet is-offset-2-tablet is-6-desktop is-offset-3-desktop is-paddingless">
               <div class="card card-product">
                 <header class="card-header card-header-name">
@@ -34,13 +34,13 @@
                     🪞 Introducción al Autoconocimiento
                   </p>
                 </header>
-                <div class="card-content detail-card-content">
+                <div class="card-content detail-card-content card-content-gift">
                   <div class="content text-card">
                     <p class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-centered ">
                       La puerta de entrada a tu mejor versión
                     </p>
                     <div class="box-frame">
-                      <iframe allowfullscreen src="https://ht2.webcoach.cl/"></iframe>    
+                      <iframe allowfullscreen src="https://ht2.webcoach.cl/"></iframe>
                     </div>
                     <div class="has-text-centered download-pdf">
                       <a href="/autoconocimiento.pdf" download target="_blank" rel="noopener">
@@ -52,7 +52,7 @@
               </div>
             </div>
           </div>
-          <div class="columns product">
+          <div class="columns product2">
             <div class="column is-12-mobile is-8-tablet is-offset-2-tablet is-6-desktop is-offset-3-desktop is-paddingless">
               <div class="card card-product">
                 <header class="card-header card-header-name">
@@ -60,7 +60,7 @@
                     🎨 Test Cromático
                   </p>
                 </header>
-                <div class="card-content detail-card-content">
+                <div class="card-content detail-card-content card-content-gift">
                   <div class="content text-card">
                     <p class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-centered ">
                       Descubre lo que tus colores revelan de ti
@@ -79,7 +79,7 @@
             </div>
           </div>
           <div class="columns">
-            <div class="column is-12-mobile is-8-tablet is-offset-2-tablet is-6-desktop is-offset-3-desktop is-paddingless">
+            <div class="column is-12-mobile is-8-tablet is-offset-2-tablet is-6-desktop is-offset-3-desktop">
               <p class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-centered">
                 Si disfrutaste esta experiencia,<br/>
                 📲 Compartelas con quien quieras...  
@@ -153,6 +153,45 @@
                   </div>    
                 </div>
               </div>
+              <div class="columns">
+                <div class="column is-12-mobile is-10-desktop is-offset-1-desktop title-others">
+                  <p class="is-size-3-desktop is-size-4-tablet is-size-5-mobile has-text-weight-bold text-offer">
+                    Oferta Especial
+                  </p>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column is-4-desktop is-offset-4-desktop is-6-tablet is-offset-3-tablet is-12-mobile">
+                  <div class="card offer-card">
+                    <div class="card-image">
+                      <figure class="image is-4by4">
+                        <img class="img-offer" src="./assets/combo.png"/>
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media is-marginless">
+                        <div class="media-content">
+                          <p class="is-size-4-desktop is-size-5-tablet is-size-6-mobile">{{ offer.name }}</p>
+                        </div>
+                      </div>
+                      <transition name="expand">
+                        <div class="content">
+                          <strong>{{ offer.title }}</strong><br/>
+                          <br/>{{ offer.subtitle }}<br/>
+                          <br/>Por apenas <strong>{{ offer.price }}</strong>
+                          <br/>
+                          <div class="button-offer-buy has-text-centered">
+                            <button
+                              @click="buy"
+                              class="button is-rounded is-size-5-desktop is-size-6-tablet is-size-6-mobile palpitar">
+                              Comprar</button>    
+                          </div>
+                        </div>
+                      </transition>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -217,7 +256,7 @@ export default {
           name: '🌟 Dinamica: Carta a mi niñez',
           title: 'Reconéctate con tu infancia para sanar, resignificar y crecer',
           subtitle: 'Lo que fuiste, lo que eres y lo que aún puedes llegar a ser… descúbrelo en esta experiencia única',
-          image: './img/people.5216ff5e.jpg',
+          image: './img/carta.67c72721.jpg',
           price: 'US$9.-',
           url: 'https://ventas.webcoach.cl/?id=3'
         },
@@ -240,6 +279,14 @@ export default {
           url: 'https://ventas.webcoach.cl/?id=5'
         }
       ],
+
+      offer: {
+          name: '🏅 Combo Coaching',
+          title: 'Nuestras 3 cápsulas exclusivas a un precio imperdible',
+          subtitle: 'Aprovecha esta experiencia de instrospección, potenciamiento y desarrollo personal.',
+          price: 'US$20.-',
+          url: 'https://pay.hotmart.com/R102568356Q'
+        }
 
     }
   },
@@ -273,6 +320,17 @@ export default {
       }, 600);
     },
 
+    buy () {
+      
+      setTimeout(() => {
+        this.showNotification = true
+      }, 900);
+
+      setTimeout(() => {
+        location.href = this.offer.url
+      }, 3000);
+    },
+
     buyingOther (t) {
       this.targetUrl = t
       setTimeout(() => {
@@ -302,15 +360,13 @@ export default {
       }
     },
 
-    closePopup() {
-      this.showPopup = false;
-    },
+    closePopup() {this.showPopup = false},
 
     copyLink() {
       navigator.clipboard.writeText(this.pageUrl).then(() => {
-        this.copied = true;
-        setTimeout(() => (this.copied = false), 2000);
-      });
+        this.copied = true
+        setTimeout(() => (this.copied = false), 2000)
+      })
     }
     
   }
@@ -328,6 +384,18 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+
+.card-product {
+  box-shadow: 0px 6px 9px 3px #292C2F;
+}
+
+.card-content-gift {
+  background-color: #292C2F;
+}
+
+.text-card {
+  color: #fff;
 }
 
 /* Botón principal */
@@ -406,6 +474,26 @@ export default {
   transform: scale(1.2);
 }
 
+.download-pdf a {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.download-pdf a:hover {
+  /*text-shadow: 0px 6px 9px 3px #292C2F;*/
+  text-shadow: 0 0 3px #38b6ff,
+  0 0 6px #38b6ff,
+  0 0 9px #38b6ff,
+  0 0 12px #38b6ff;
+}
+
+.text-offer {
+  text-shadow: 0 0 3px #38b6ff,
+  0 0 6px #38b6ff,
+  0 0 9px #38b6ff,
+  0 0 12px #38b6ff;
+}
+
 /* Colores por red */
 .copy { color: #555; }
 
@@ -443,19 +531,42 @@ export default {
 }
 
 .box-frame {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 3px solid #000;
+  margin: 0 auto;
+  width: 66%;
+  aspect-ratio: 16 / 10;
+  box-shadow: 0 0 6px #38b6ff,
+  0 0 12px #38b6ff,
+  0 0 15px #38b6ff,
+  0 0 18px #38b6ff;
+  border-radius: 12px;
 }
 
 iframe {
-  width: 100%;
+  margin: 1% 1%;
+  width: 98%;
   height: 100%;
+  border-radius: 12px;
 }
 
-.product {
-  margin-top: 5.1rem;
-  margin-bottom: 5.1rem !important;
+.offer-card{
+  box-shadow: 0 0 6px #38b6ff,
+  0 0 12px #38b6ff,
+  0 0 15px #38b6ff,
+  0 0 18px #38b6ff;
+  border-radius: 12px;
+}
+
+.img-offer {
+  border-radius: 12px 12px 0 0;
+}
+
+.product1 {
+  margin-top: 2.1rem;
+}
+
+.product2 {
+  margin-top: 6rem;
+  margin-bottom: 3rem !important;
 }
 
 .card-header-name {
@@ -476,8 +587,11 @@ iframe {
   border-color: #CD564A;
   color: #fff !important;
   box-shadow: 0px 6px 6px 0px #922D23;
-  transition: all 300ms;
-  -webkit-tap-highlight-color: transparent;
+}
+
+.button-offer-buy {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .img-detail {
@@ -557,7 +671,7 @@ iframe {
     margin-top: 2.7rem;
   }
 
-  .card-product {
+  /*.card-product {
     margin-left: 6%;
     margin-right: 3%;
     max-width: 91%;
@@ -566,8 +680,24 @@ iframe {
   .box-card {
     width: 46%;
     margin: 1.5rem 2%;
+  }*/
+
+  .download-pdf a {
+    font-size: 1.25rem;
+    text-shadow: 0 0 3px #38b6ff,
+    0 0 6px #38b6ff,
+    0 0 9px #38b6ff,
+    0 0 12px #38b6ff;
   }
 
+  .box-frame {
+    aspect-ratio: 16 / 16;
+    box-shadow: 0 0 6px #38b6ff,
+    0 0 9px #38b6ff,
+    0 0 12px #38b6ff,
+    0 0 15px #38b6ff;
+    border-radius: 12px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -584,7 +714,15 @@ iframe {
     display: flex;
     flex-direction: column;
     margin-top: 0;
-    margin-bottom: 0 !important;
+    margin-bottom: 3rem !important;
+  }
+
+  .download-pdf a {
+    font-size: 1rem;
+    text-shadow: 0 0 3px #38b6ff,
+    0 0 6px #38b6ff,
+    0 0 9px #38b6ff,
+    0 0 12px #38b6ff;
   }
 
   .detail {
@@ -604,6 +742,17 @@ iframe {
   .box-card {
     width: 90%;
     margin: 1.5rem 5%;
+  }
+
+  .box-frame {
+    margin: 0 auto;
+    width: 81%;
+    aspect-ratio: 9 / 9;
+    box-shadow: 0 0 6px #38b6ff,
+    0 0 12px #38b6ff,
+    0 0 15px #38b6ff,
+    0 0 18px #38b6ff;
+    border-radius: 12px;
   }
 
 }
