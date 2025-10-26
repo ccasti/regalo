@@ -21,7 +21,7 @@
                 Nada es casualidad. Hoy estás aquí por una razón.
               <p class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-centered">
                 Para agradecerte por estar aquí, quiero compartir contigo 2 cápsulas exclusivas.<br/>
-                <br/>🔒 Acceso 100 % gratuito y sin compromiso. Sólo por tiempo limitado.<br/>
+                <br/>🔓 Acceso 100 % gratuito y sin compromiso. Sólo por tiempo limitado. 🚨<br/>
                 <br/>👇 Explora cada una y empieza este viaje...
               </p>
             </div>
@@ -746,8 +746,8 @@ iframe {
 
   .box-frame {
     margin: 0 auto;
-    width: 81%;
-    aspect-ratio: 9 / 9;
+    width: 84%;
+    aspect-ratio: 9 / 10;
     box-shadow: 0 0 6px #38b6ff,
     0 0 12px #38b6ff,
     0 0 15px #38b6ff,
