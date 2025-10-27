@@ -21,8 +21,8 @@
                 Nada es casualidad. Hoy estás aquí por una razón.
               <p class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-centered">
                 Para agradecerte por estar aquí, quiero compartir contigo 2 cápsulas exclusivas.<br/>
-                <br/>🔓 Acceso 100 % gratuito y sin compromiso. Sólo por tiempo limitado. 🚨<br/>
-                <br/>👇 Explora cada una y empieza este viaje...
+                <br/>🔓 Acceso 100% gratuito y sin compromiso. Sólo por tiempo limitado. 🚨<br/>
+                <br/>🎁 <strong>Primer Regalo</strong> 👇
               </p>
             </div>
           </div>
@@ -54,6 +54,9 @@
           </div>
           <div class="columns product2">
             <div class="column is-12-mobile is-8-tablet is-offset-2-tablet is-6-desktop is-offset-3-desktop is-paddingless">
+              <p class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-centered gift2">
+                🎁 <strong>Segundo Regalo</strong> 👇
+              </p>
               <div class="card card-product">
                 <header class="card-header card-header-name">
                   <p class="card-header-title is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-weight-bold is-centered">
@@ -82,7 +85,7 @@
             <div class="column is-12-mobile is-8-tablet is-offset-2-tablet is-6-desktop is-offset-3-desktop">
               <p class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-centered">
                 Si disfrutaste esta experiencia,<br/>
-                📲 Compartelas con quien quieras...  
+                📲 Compártelas con quien quieras...  
               </p>
               <div class="share-container">
                 <!-- Botón principal -->
@@ -154,9 +157,12 @@
                 </div>
               </div>
               <div class="columns">
-                <div class="column is-12-mobile is-10-desktop is-offset-1-desktop title-others">
+                <div class="column is-12-mobile is-10-desktop is-offset-1-desktop title-others title-offer has-text-centered">
                   <p class="is-size-3-desktop is-size-4-tablet is-size-5-mobile has-text-weight-bold text-offer">
-                    Oferta Especial
+                    Oferta Especial Imperdible
+                  </p>
+                  <p class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-weight-bold">
+                    Sólo por tiempo limitado
                   </p>
                 </div>
               </div>
@@ -183,7 +189,7 @@
                           <div class="button-offer-buy has-text-centered">
                             <button
                               @click="buy"
-                              class="button is-rounded is-size-5-desktop is-size-6-tablet is-size-6-mobile palpitar">
+                              class="button is-rounded is-size-4-desktop is-size-5-tablet is-size-6-mobile palpitar">
                               Comprar</button>    
                           </div>
                         </div>
@@ -221,6 +227,50 @@
                   </p>
                 </div>
               </div>  
+            </div>
+          </div>
+        </section>
+        <!-- Redes Sociales -->
+        <section class="hero hero-networks">
+          <div class="hero-body">
+            <div class="container">
+              <div class="columns">
+                <div class="column is-12-mobile is-10-desktop is-offset-1-desktop has-text-centered">
+                  <p class="is-size-3-desktop is-size-4-tablet is-size-5-mobile has-text-weight-bold">
+                    <STRONG>Redes Sociales</STRONG>
+                  </p>
+                  <p class="is-size-4-desktop is-size-5-tablet is-size-6-mobile has-text-centered">
+                    Síguenos en nuestras redes sociales para enterarte de nuevos regalos y lanzamientos.
+                  </p>
+                </div>
+              </div>
+              <div class="columns">
+                <div class="column is-6-desktop is-offset-3-desktop is-4-tablet is-offset-4-tablet is-6-mobile is-offset-3-mobile box-networks">
+                  <figure class="image">
+                    <img id="face" class="img-networks palpitar" src="./assets/facebook.png" @click="socializing">
+                  </figure>
+                  <figure class="image">
+                    <img id="insta" class="img-networks palpitar" src="./assets/instagram.png" @click="socializing">
+                  </figure>
+                </div>
+              </div>  
+            </div>
+          </div>
+        </section>
+        <!-- Marca -->
+        <section class="hero hero-offer">
+          <div class="hero-body">
+            <div class="container">
+              <div class="columns">
+                <div class="column is-6-desktop is-offset-3-desktop is-8-tablet is-offset-2-tablet is-12-mobile box-marca">
+                  <figure class="image">
+                    <img class="img-logo" src="./assets/logo-small.png">
+                  </figure>
+                  <p class="is-size-2-desktop is-size-3-tablet is-size-4-mobile has-text-weight-bold text-offer">
+                    <STRONG>Conócete - Gestiónate</STRONG>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -281,12 +331,23 @@ export default {
       ],
 
       offer: {
-          name: '🏅 Combo Coaching',
-          title: 'Nuestras 3 cápsulas exclusivas a un precio imperdible',
-          subtitle: 'Aprovecha esta experiencia de instrospección, potenciamiento y desarrollo personal.',
-          price: 'US$20.-',
-          url: 'https://pay.hotmart.com/R102568356Q'
-        }
+        name: '🏅 Combo Coaching',
+        title: 'Nuestras 3 cápsulas exclusivas a un precio imperdible',
+        subtitle: 'Aprovecha esta experiencia de introspección, potenciamiento y desarrollo personal.',
+        price: 'US$20.-',
+        url: 'https://pay.hotmart.com/R102568356Q'
+      },
+
+      networks: [
+        {
+          id: 'face',
+          url: 'https://www.facebook.com/profile.php?id=61575693165438'
+        },
+        {
+          id: 'insta',
+          url: 'https://www.instagram.com/conoceteygestionate/'
+        },
+      ]
 
     }
   },
@@ -367,6 +428,18 @@ export default {
         this.copied = true
         setTimeout(() => (this.copied = false), 2000)
       })
+    },
+
+    socializing(ev) {
+      const target = ev.target.id
+      var url = ''
+      
+      for (var i in this.networks) {
+        if (this.networks[i].id == target) {
+          url = this.networks[i].url
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+      }
     }
     
   }
@@ -449,6 +522,12 @@ export default {
   margin-top: 15px;
 }
 
+.box-marca {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .link-share {
   margin-bottom: 2.1rem;
   display: flex;
@@ -458,6 +537,23 @@ export default {
 .image-share {
   max-width: 60px;
   height: auto;
+}
+
+.box-networks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.img-networks {
+  margin: 1.5rem 1.5rem;
+  max-width: 150px;
+  min-width: 150px;
+  max-height: 150px;
+  min-height: 150px;
+  border-radius: 50%;
+  box-shadow: 0px 6px 6px 0px #CB4335;
+  cursor: pointer;
 }
 
 .share-icons a,
@@ -485,6 +581,11 @@ export default {
   0 0 6px #38b6ff,
   0 0 9px #38b6ff,
   0 0 12px #38b6ff;
+}
+
+.title-offer {
+  display: flex;
+  flex-direction: column;
 }
 
 .text-offer {
@@ -560,13 +661,13 @@ iframe {
   border-radius: 12px 12px 0 0;
 }
 
-.product1 {
-  margin-top: 2.1rem;
-}
-
 .product2 {
   margin-top: 6rem;
   margin-bottom: 3rem !important;
+}
+
+.gift2 {
+  margin-bottom: .9rem;
 }
 
 .card-header-name {
@@ -602,6 +703,14 @@ iframe {
   box-shadow: 0px 9px 9px 0px black;
 }
 
+.img-logo{
+  margin-right: 2.4rem;
+  max-width: 120px;
+  min-width: 120px;
+  max-height: 120px;
+  min-height: 120px;
+}
+
 .who-title {
   margin-bottom: 1.5rem;
 }
@@ -613,6 +722,10 @@ iframe {
 .hero-detail {
   background: #CD564A;
   color: #fff !important;
+}
+
+.hero-networks {
+  background: #fff;
 }
 
 .hero-offer {
@@ -671,17 +784,6 @@ iframe {
     margin-top: 2.7rem;
   }
 
-  /*.card-product {
-    margin-left: 6%;
-    margin-right: 3%;
-    max-width: 91%;
-  }
-
-  .box-card {
-    width: 46%;
-    margin: 1.5rem 2%;
-  }*/
-
   .download-pdf a {
     font-size: 1.25rem;
     text-shadow: 0 0 3px #38b6ff,
@@ -697,6 +799,21 @@ iframe {
     0 0 12px #38b6ff,
     0 0 15px #38b6ff;
     border-radius: 12px;
+  }
+
+  .img-networks {
+    max-width: 120px;
+    min-width: 120px;
+    max-height: 120px;
+    min-height: 120px;
+  }
+
+  .img-logo{
+    margin-right: 2.4rem;
+    max-width: 90px;
+    min-width: 90px;
+    max-height: 90px;
+    min-height: 90px;
   }
 }
 
@@ -753,6 +870,21 @@ iframe {
     0 0 15px #38b6ff,
     0 0 18px #38b6ff;
     border-radius: 12px;
+  }
+
+  .img-networks {
+    max-width: 90px;
+    min-width: 90px;
+    max-height: 90px;
+    min-height: 90px;
+  }
+
+  .img-logo{
+    margin-right: 1.5rem;
+    max-width: 72px;
+    min-width: 72px;
+    max-height: 72px;
+    min-height: 72px;
   }
 
 }
