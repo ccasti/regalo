@@ -6,7 +6,10 @@
       </div>
       <div class="contDetails">
         <div class="message-body has-text-centered">
-          <p>Estas siendo redireccionado a otra página</p>
+          <p>
+            Estas siendo redireccionado a otra página<br/>
+            <br/><strong>Para regresar acá sólo presiona ir atrás en tu navegador.</strong>
+          </p>
           <button class="button is-rounded button-login is-loading"></button>
         </div>
       </div>

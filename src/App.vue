@@ -399,8 +399,9 @@ export default {
       }, 900);
         
       setTimeout(() => {
+        this.showNotification = false
         location.href = this.targetUrl
-      }, 3000);
+      }, 6000);
     },
 
     async shareNative() {
