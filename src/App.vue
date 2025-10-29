@@ -266,7 +266,7 @@
                   <figure class="image">
                     <img class="img-logo" src="./assets/logo-small.png">
                   </figure>
-                  <p class="is-size-2-desktop is-size-3-tablet is-size-4-mobile has-text-weight-bold text-offer">
+                  <p class="is-size-3-desktop is-size-4-tablet is-size-5-mobile has-text-weight-bold text-offer">
                     <STRONG>Conócete - Gestiónate</STRONG>
                   </p>
                 </div>
